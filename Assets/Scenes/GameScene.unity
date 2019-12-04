@@ -644,7 +644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 71.86, y: 10.8220005, z: 31.013002}
 --- !u!4 &743629467 stripped
 Transform:
@@ -1016,7 +1016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20, y: 90, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -2024,6 +2024,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeWireframe
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 302c8032631e0e8468415fbf507b2349,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 302c8032631e0e8468415fbf507b2349,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302c8032631e0e8468415fbf507b2349, type: 3}
 --- !u!1001 &1685837003
@@ -2411,6 +2421,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: ff4fdcfc16e5fd74bac5063f0ff6ffff, type: 3}
+--- !u!1 &1957009455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 302c8032631e0e8468415fbf507b2349,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547280519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1957009456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957009455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 38ce3bc67ed0ef046957a61d893da332, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!4 &1961836416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 24baa34bd14c6fa4d8cbc2fc800e8e4e,
