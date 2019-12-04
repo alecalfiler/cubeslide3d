@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody player;
     public bool grounded;
+    public Respawn respawnPoint;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Floor")
         {
@@ -49,9 +50,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             Debug.Log("We hit something");
-            Destroy(player.gameObject);
+            respawnPoint.RestartGame();
         }
     }
+
 
     private void OnCollisionExit(Collision collision)
     {
