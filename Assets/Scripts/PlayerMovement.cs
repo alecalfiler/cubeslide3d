@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         player.AddForce(5, 0, 0);
+        player = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -21,16 +22,16 @@ public class PlayerMovement : MonoBehaviour
         player.velocity = vel;
    
         //rotation
-        if (Physics.Raycast(transform.position, Vector3.down, GetComponent<BoxCollider>().size.x / 2 + 0.4f))
+        if (Physics.Raycast(transform.position, Vector3.down, GetComponent<BoxCollider>().size.y / 2 + 0.4f))
         {
             Quaternion rotate = transform.rotation;
-            rotate.x = Mathf.Round(rotate.x / 90) * 90;
+            rotate.z = Mathf.Round(rotate.z / 90) * 90;
             transform.rotation = rotate;
             //jump
             if (Input.GetKey("space") && grounded == true)
             {
-                
-                player.AddForce(0, 300, 0);
+                player.velocity = Vector3.zero;
+                player.AddForce(Vector3.up * 55000);
             }
         }
         else
