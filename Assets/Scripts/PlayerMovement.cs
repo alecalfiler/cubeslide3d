@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float burstForce = 50f;
     public float burstRadius = 4f;
     public float burstUpward = 0.4f;
-    
+
     float cubesPivotDistance;
     Vector3 cubesPivot;
 
@@ -34,14 +34,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 vel = player.velocity;
         vel.x = 5;
         player.velocity = vel;
-   
+
         //rotation
         if (Physics.Raycast(transform.position, Vector3.down, GetComponent<BoxCollider>().size.y / 2 + 0.4f))
         {
             Quaternion rotate = transform.rotation;
             rotate.z = Mathf.Round(rotate.z / 90) * 90;
             transform.rotation = rotate;
-            
+
             //jump
             if (Input.GetKey("space") && grounded == true)
             {
@@ -65,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             burst();
+            SoundManagerScript.PlaySound ("crash");
             FindObjectOfType<GameManager>().EndGame();
         }
     }
@@ -82,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Destroy(player.gameObject);
         gameObject.SetActive(false);
-       
+
         for (int x = 0; x < cubes; x++)
         {
             for (int y = 0; y < cubes; y++)
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         Vector3 explosionPos = transform.position; //get explosion position
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, burstRadius);  //get colliders at position 
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, burstRadius);  //get colliders at position
         foreach (Collider hit in colliders)  //add explosion force
         {
             //get rigidbody from collider object
@@ -109,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // ============ CREATE THE PIECES =============
-    void createPiece(int x, int y, int z) 
+    void createPiece(int x, int y, int z)
     {
         //create piece
         GameObject piece;
