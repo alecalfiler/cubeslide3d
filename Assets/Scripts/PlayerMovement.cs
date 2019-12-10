@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody player;
     public bool grounded;
 
-    public Animator animator;
-
     private void Start()
     {
        // player.AddForce(5, 0, 0);
@@ -49,28 +47,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 player.velocity = Vector3.zero;
                 player.AddForce(Vector3.up * 55000);
-                
             }
-
         }
         else
         {
             //rotate back
             transform.Rotate(Vector3.back * 5f);
         }
-
-        if (player.transform.position.y < -3)
-        {
-
-            animator.SetTrigger("Fade1to2");
-            //animate the new background to fade in, and the current to fade out.
-        }
-
-        if (player.transform.position.y < -10)
-        {
-            animator.SetTrigger("Fade2to3");
-        }
-
     }
     // =========== COLLISIONS ==============
     private void OnCollisionEnter(Collision collision)
