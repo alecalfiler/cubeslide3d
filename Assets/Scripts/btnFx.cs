@@ -12,4 +12,14 @@ public class btnFx : MonoBehaviour
   {
     myFx.PlayOneShot(clickFx);
   }
+
+    public void quitGame()
+    {
+        Debug.Log("Application Shutting Down..");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

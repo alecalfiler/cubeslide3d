@@ -36,12 +36,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void quitGame()
-    {
-        Debug.Log("Application Shutting Down..");
-        Application.Quit(); //quits application upon click, only works for built application.
-    }
-
     void Restart()
     {
         //animator.SetTrigger("FadeOut");
