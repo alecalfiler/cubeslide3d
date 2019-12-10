@@ -19,7 +19,9 @@ public class SoundManagerScript : MonoBehaviour
     void Update()
     {
 
+
     }
+
 
     public static void PlaySound (string clip)
     {
